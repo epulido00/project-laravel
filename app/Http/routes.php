@@ -15,6 +15,11 @@ use App\Task;
 
 Route::get('/tareas', 'TareasController@index');
 
+Route::get('/tareas2', function () {
+
+    return 'Hola';
+});
+
 Route::get('/', function () {
 
     $tasks = Task::orderBy('created_at', 'asc')->get();
