@@ -20,7 +20,7 @@
     <?php if(count($tasks) > 0): ?>
     <?php foreach($tasks as $task): ?>
         <div>
-            <h3>#<?php echo e($task->id); ?> - <?php echo e($task->titulo); ?></h3>
+            <h3>#<?php echo e($task->id); ?> - <?php echo e($task->titulo); ?> [<a href="editTask/<?php echo e($task->id); ?>">editar</a>]</h3>
             <p><?php echo e($task->descripcion); ?></p>
             <form action="<?php echo e(url('deleteTask/'.$task->id)); ?>" method = "POST">
 
