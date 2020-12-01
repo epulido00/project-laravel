@@ -20,7 +20,7 @@
     @if (count($tasks) > 0)
     @foreach ($tasks as $task)
         <div>
-            <h3>#{{$task->id}} - {{$task->titulo}}</h3>
+            <h3>#{{$task->id}} - {{$task->titulo}} [<a href="editTask/{{$task->id}}">editar</a>]</h3>
             <p>{{$task->descripcion}}</p>
             <form action="{{url('deleteTask/'.$task->id)}}" method = "POST">
 

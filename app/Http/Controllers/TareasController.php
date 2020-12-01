@@ -47,4 +47,13 @@ class TareasController extends Controller
 
 		return redirect('/');
 	}
+
+	public function editTask($id=0) {
+
+		$task = Task::find($id);
+		if($id==0 or !$task) die("Error");
+
+
+		return view('tareas/edit', ['task'=>$task]);
+	}
 }
