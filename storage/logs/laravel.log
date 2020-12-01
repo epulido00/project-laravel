@@ -4491,3 +4491,21 @@ Stack trace:
 #62 /Users/pedgarc/ProyectosPHP/project-laravel/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #63 /Users/pedgarc/ProyectosPHP/project-laravel/server.php(21): require_once('/Users/pedgarc/...')
 #64 {main}  
+[2020-12-01 18:56:19] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/edwin/Desktop/proyectos_edwin/todo/storage/framework/views/751a8493a81e02948a8cc0f0bf52a57fde093f2f.php:5
+Stack trace:
+#0 {main}  
+[2020-12-01 18:56:20] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'parse error' in /Users/edwin/Desktop/proyectos_edwin/todo/storage/framework/views/751a8493a81e02948a8cc0f0bf52a57fde093f2f.php:5
+Stack trace:
+#0 {main}  
+[2020-12-01 19:03:32] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined function method()' in /Users/edwin/Desktop/proyectos_edwin/todo/storage/framework/views/751a8493a81e02948a8cc0f0bf52a57fde093f2f.php:8
+Stack trace:
+#0 {main}  
+[2020-12-01 19:03:38] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined function method()' in /Users/edwin/Desktop/proyectos_edwin/todo/storage/framework/views/751a8493a81e02948a8cc0f0bf52a57fde093f2f.php:8
+Stack trace:
+#0 {main}  
+[2020-12-01 19:03:50] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined function method()' in /Users/edwin/Desktop/proyectos_edwin/todo/storage/framework/views/751a8493a81e02948a8cc0f0bf52a57fde093f2f.php:8
+Stack trace:
+#0 {main}  
+[2020-12-01 19:03:54] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined function method()' in /Users/edwin/Desktop/proyectos_edwin/todo/storage/framework/views/751a8493a81e02948a8cc0f0bf52a57fde093f2f.php:8
+Stack trace:
+#0 {main}  

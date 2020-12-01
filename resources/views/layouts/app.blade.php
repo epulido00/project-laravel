@@ -8,7 +8,7 @@
 </head>
 <body>
     <nav class="navbar navbar-light bg-light">
-	  <span class="navbar-brand mb-0 h1">El bustra</span>
+        <a href = "{{ url('/') }}"><span class="navbar-brand mb-0 h1">El bustra</span></a>
 	</nav>
 	<br />
     <div class="container">

@@ -10,15 +10,17 @@
     <form action="<?php echo e(url('addTask')); ?>" method = "POST">
         <?php echo e(csrf_field()); ?>
 
-        <input type = "text" name = "titulo" />
-        <input type = "text" name = "descripcion" />
-        <input type = "submit" value = "Guardar" />
+        <input type = "text" name = "titulo" class="form-control" placeholder="Titulo" />
+        <input type = "text" name = "descripcion" class="form-control" placeholder="Descripcion" />
+        <input type = "submit" value = "Guardar" class="form-control btn btn-primary" />
     </form>
+
+    <hr />
 
     <?php if(count($tasks) > 0): ?>
     <?php foreach($tasks as $task): ?>
         <div>
-            <h3>#<?php echo e($task->id); ?> - <?php echo e($task->titulo); ?></h3>
+            <h3>#<?php echo e($task->id); ?> - <?php echo e($task->titulo); ?> [<a href="viewTask/<?php echo e($task->id); ?>">editar</a>]</h3>
             <p><?php echo e($task->descripcion); ?></p>
             <form action="<?php echo e(url('deleteTask/'.$task->id)); ?>" method = "POST">
 
@@ -27,7 +29,10 @@
                 <?php echo e(method_field('DELETE')); ?>
 
 
-                <button type="submit">Delete</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <br />
+                <hr />
+                <br />
 
             </form>
         </div>
