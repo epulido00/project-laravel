@@ -2,6 +2,21 @@
 
 <div>
     <h4>Pendientes por hacer</h4>
+
+    <?php if(session('success')): ?>
+        <div class="alert alert-success">
+            <?php echo e(session('success')); ?>
+
+        </div>
+    <?php endif; ?>
+
+    <?php if(session('success-del')): ?>
+        <div class="alert alert-warning">
+            <?php echo e(session('success-del')); ?>
+
+        </div>
+    <?php endif; ?>
+
     <?php if(count($errors) > 0): ?> 
         <?php foreach($errors->all() as $error): ?>
             <li><?php echo e($error); ?></li>
@@ -20,7 +35,7 @@
     <?php if(count($tasks) > 0): ?>
     <?php foreach($tasks as $task): ?>
         <div>
-            <h3>#<?php echo e($task->id); ?> - <?php echo e($task->titulo); ?> [<a href="editTask/<?php echo e($task->id); ?>">editar</a>]</h3>
+            <h3>#<?php echo e($task->id); ?> - <?php echo e($task->titulo); ?> [<a href="viewTask/<?php echo e($task->id); ?>">editar</a>]</h3>
             <p><?php echo e($task->descripcion); ?></p>
             <form action="<?php echo e(url('deleteTask/'.$task->id)); ?>" method = "POST">
 
@@ -38,7 +53,7 @@
         </div>
     <?php endforeach; ?>
     <?php else: ?>
-        No hay tareas de momento
+        <center><h3>No hay tareas de momento</h3></center>
     <?php endif; ?>
 </div>
 

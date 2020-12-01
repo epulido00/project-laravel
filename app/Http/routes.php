@@ -22,3 +22,9 @@ Route::delete('/deleteTask/{task}', 'TareasController@deleteTask');
 Route::get('/viewTask/{id}', 'TareasController@viewTask');
 
 Route::put('/editTask/{task}', 'TareasController@editTask');
+
+Route::get('/login', 'UsuariosController@showLogin');
+
+Route::post('/login', 'UsuariosController@doLogin');
+
+Route::get('/logout', 'UsuariosController@doLogout');

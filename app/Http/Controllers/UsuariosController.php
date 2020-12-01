@@ -23,6 +23,7 @@ class UsuariosController extends Controller
     	$user->save();
 		//dd(User::find(1));
     	*/
+
     	return view('usuarios/show_login');
     }
 
@@ -45,10 +46,10 @@ class UsuariosController extends Controller
           'password' => $request->get('password')
         );
 
-        dd(Auth::attempt($userdata));
+	    $usuario = User::where('usuario', $request->get('usuario'))
+	    	->where('password', md5($request->get('password')))->first();
 
-        dd($userdata);
-
+        dd($usuario);
 
     }
 
