@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titulo</title>
+    <title>Lista de tareas</title>
 </head>
 <body>
     <div style = "width: 100%; height: 50px; background-color: gray;">
