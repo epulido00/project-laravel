@@ -11,7 +11,7 @@ class TareasController extends Controller
     public function index()
     {
 
-    	$tasks = Task::orderBy('created_at', 'asc')->get();
+    	$tasks = Task::orderBy('created_at', 'desc')->get();
     	
 	    return view('inicio.principal', [
 	        'tasks' => $tasks
@@ -39,13 +39,13 @@ class TareasController extends Controller
 
 	    $task->save();
 
-	    return redirect('/');
+	    return redirect('/')->with('success', 'Se agregó tu tarea correctamente');
 	}
 	
 	public function deleteTask(Task $task) {
 		$task->delete();
 
-		return redirect('/');
+		return redirect('/')->with('success-del', 'Se eliminó tu tarea correctamente');;
 	}
 
 	public function viewTask($id=0) {
@@ -68,13 +68,13 @@ class TareasController extends Controller
 	        return redirect('/viewTask/'.$task->id)
 	            ->withInput()
 	            ->withErrors($validator);
-	    }
+	    } else {
+			$task->titulo = $request->titulo;
+			$task->descripcion = $request->descripcion;
 
-		$task->titulo = $request->titulo;
-		$task->descripcion = $request->descripcion;
+			$task->save();
 
-		$task->save();
-
-		return redirect('/viewTask/'.$task->id);
+			return redirect('/viewTask/'.$task->id)->with('success', 'Se actualizó correctamente');
+		}
 	}
 }

@@ -2,6 +2,21 @@
 
 <div>
     <h4>Pendientes por hacer</h4>
+
+    <?php if(session('success')): ?>
+        <div class="alert alert-success">
+            <?php echo e(session('success')); ?>
+
+        </div>
+    <?php endif; ?>
+
+    <?php if(session('success-del')): ?>
+        <div class="alert alert-warning">
+            <?php echo e(session('success-del')); ?>
+
+        </div>
+    <?php endif; ?>
+
     <?php if(count($errors) > 0): ?> 
         <?php foreach($errors->all() as $error): ?>
             <li><?php echo e($error); ?></li>
@@ -38,7 +53,7 @@
         </div>
     <?php endforeach; ?>
     <?php else: ?>
-        No hay tareas de momento
+        <center><h3>No hay tareas de momento</h3></center>
     <?php endif; ?>
 </div>
 

@@ -3,6 +3,19 @@
 
 <div>
     <h4>Pendientes por hacer</h4>
+
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if (session('success-del'))
+        <div class="alert alert-warning">
+            {{ session('success-del') }}
+        </div>
+    @endif
+
     @if (count($errors) > 0) 
         @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
@@ -36,7 +49,7 @@
         </div>
     @endforeach
     @else
-        No hay tareas de momento
+        <center><h3>No hay tareas de momento</h3></center>
     @endif
 </div>
 

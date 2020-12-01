@@ -1,6 +1,14 @@
 <?php $__env->startSection('content'); ?>
 
 <h1>Editar</h1>
+
+<?php if(session('success')): ?>
+    <div class="alert alert-success">
+        <?php echo e(session('success')); ?>
+
+    </div>
+<?php endif; ?>
+
 <?php if(count($errors) > 0): ?> 
     <?php foreach($errors->all() as $error): ?>
         <li><?php echo e($error); ?></li>
