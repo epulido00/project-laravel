@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de tareas</title>
+    <title>Titulo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
-    <div style = "width: 100%; height: 50px; background-color: gray;">
-        <h3>Header</h3>
-    </div>
-    <div class = "container">
+    <nav class="navbar navbar-light bg-light">
+        <a href = "{{ url('/') }}"><span class="navbar-brand mb-0 h1">El bustra</span></a>
+	</nav>
+	<br />
+    <div class="container">
         @yield('content')
     </div>
 </body>
