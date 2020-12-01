@@ -10,11 +10,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-use Illuminate\Http\Request;
-use App\Task;
 
 Route::get('/tareas', 'TareasController@index');
 
 Route::get('/', 'TareasController@index');
 
 Route::post('/addTask', 'TareasController@addTask');
+
+Route::delete('/deleteTask/{task}', 'TareasController@deleteTask');

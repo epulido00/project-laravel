@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-
 <div>
     <h4>Pendientes por hacer</h4>
     @if (count($errors) > 0) 
@@ -19,8 +18,16 @@
     @if (count($tasks) > 0)
     @foreach ($tasks as $task)
         <div>
-            <h3>{{$task->titulo}}</h3>
+            <h3>#{{$task->id}} - {{$task->titulo}}</h3>
             <p>{{$task->descripcion}}</p>
+            <form action="{{url('deleteTask/'.$task->id)}}" method = "POST">
+
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+
+                <button type="submit">Delete</button>
+
+            </form>
         </div>
     @endforeach
     @else
