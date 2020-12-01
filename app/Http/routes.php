@@ -15,33 +15,6 @@ use App\Task;
 
 Route::get('/tareas', 'TareasController@index');
 
-Route::get('/', function () {
+Route::get('/', 'TareasController@index');
 
-    $tasks = Task::orderBy('created_at', 'asc')->get();
-    
-    return view('inicio.principal', [
-        'tasks' => $tasks
-    ]);
-});
-
-Route::post('addTask', function(Request $request) {
-    $validator = Validator::make($request->all(), [
-        'titulo' => 'required|max:255',
-        'descripcion' => 'required'
-    ]);
-
-    if ($validator->fails()) {
-        return redirect('/')
-            ->withInput()
-            ->withErrors($validator);
-    }
-    
-    $task = new Task;
-    $task->titulo = $request->titulo;
-    $task->descripcion = $request->descripcion;
-    $task->confirmed = false;
-
-    $task->save();
-
-    return redirect('/');
-});
+Route::post('/addTask', 'TareasController@addTask');
