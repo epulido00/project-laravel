@@ -13,6 +13,8 @@
 use Illuminate\Http\Request;
 use App\Task;
 
+Route::get('/tareas', 'TareasController@index');
+
 Route::get('/', function () {
 
     $tasks = Task::orderBy('created_at', 'asc')->get();
